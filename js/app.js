@@ -9,9 +9,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-	let sumValue = a + b;
-	let message = `The sum of ${a} and ${b} is ${sumValue}.`;
-	return [sumValue, message];
+  let sumValue = a + b;
+  let message = `The sum of ${a} and ${b} is ${sumValue}.`;
+  // let argumentsAddArray = Array.from(arguments);
+  // console.log(argumentsAddArray);
+  return [sumValue, message];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -29,8 +31,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-	return [(a * b), `The product of ${a} and ${b} is ${a*b}.`];
+  // let argumentsMultArray = Array.from(arguments);
+  // console.log(argumentsMultArray);
+  return [(a * b), `The product of ${a} and ${b} is ${a*b}.`];
 }
+
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
@@ -50,11 +55,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  // argumentsAddArray.push(c);
+  // argumentsMultArray.push(c);
+  let add= sum(a, b);
+  // console.log(add[0]);
+  let totalAdd= sum(add[0], c)[0];
+  // console.log(totalAdd);
+  let mult= multiply(a, b);
+  let totalMult= multiply(mult[0], c)[0];
+	console.log(totalMult);
+  let addString= `${a} and ${b} and ${c} sum to ${totalAdd}.`;
+  let multString= `The product of ${a} and ${b} and ${c} is ${totalMult}.`;
+  return [totalAdd, totalMult, addString, multString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -99,7 +115,7 @@ function multiplyArray(multArr) { //eslint-disable-line
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
